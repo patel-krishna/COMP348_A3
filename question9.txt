@@ -1,0 +1,7 @@
+sublist(_, 0, 0, []).
+sublist(List, Start, Length, Sublist):-
+ Length2 is Length+1,
+ Start2 is Start+1,
+ append(L1,[Length2|_], List),
+ append(_,[Start2|L2], L1),
+ append([Start2|L2],[Length2], Sublist).
